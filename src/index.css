@@ -1,0 +1,241 @@
+/* ==========================================================================
+   PASTEL DUSK — SCRAPBOOK & STATIONERY DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Main Palette */
+  --color-pastel-sky: #C5EFFA;
+  --color-dusty-blue: #87A9C2;
+  --color-powder-blue: #DDECF3;
+  --color-warm-white: #FFFFFF;
+  --color-butter-yellow: #FFFDD0;
+
+  /* Supporting Palette */
+  --color-soft-gray-blue: #A9BDCC;
+  --color-pale-cream: #FAF9F3;
+  --color-light-grid-blue: #B6DDEB;
+  --color-muted-slate-blue: #6F91AA;
+  --color-soft-pink: #F5D7E5;
+  --color-soft-rose: #FDE8EF;
+  --color-dark-text: #526A7C;
+  --color-darker-text: #374A58;
+  --color-subtle-border: #E2EFF6;
+
+  /* Typography */
+  --font-handwritten: 'Caveat', cursive;
+  --font-script: 'Sacramento', cursive;
+  --font-display: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shadows */
+  --shadow-scrapbook: 0 8px 24px -4px rgba(111, 145, 170, 0.15), 0 2px 6px -1px rgba(111, 145, 170, 0.08);
+  --shadow-hover: 0 14px 30px -4px rgba(111, 145, 170, 0.22), 0 4px 10px -2px rgba(111, 145, 170, 0.12);
+  --shadow-polaroid: 0 6px 18px rgba(82, 106, 124, 0.12);
+
+  /* Borders & Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-dark-text);
+  background-color: var(--color-warm-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: var(--color-dark-text);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-darker-text);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+/* Outlined Display Lettering (Like "NEW PRINTABLES" in Reference) */
+.font-outlined {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+  text-shadow:
+    -2px -2px 0 var(--color-dusty-blue),
+     2px -2px 0 var(--color-dusty-blue),
+    -2px  2px 0 var(--color-dusty-blue),
+     2px  2px 0 var(--color-dusty-blue),
+     0px  4px 8px rgba(111, 145, 170, 0.25);
+}
+
+.font-outlined-sm {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  text-shadow:
+    -1.5px -1.5px 0 var(--color-dusty-blue),
+     1.5px -1.5px 0 var(--color-dusty-blue),
+    -1.5px  1.5px 0 var(--color-dusty-blue),
+     1.5px  1.5px 0 var(--color-dusty-blue),
+     0px  3px 6px rgba(111, 145, 170, 0.2);
+}
+
+/* Stitched / Dashed Lettering Effect */
+.font-stitched {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.06em;
+  text-shadow: 
+    0 0 1px #87A9C2,
+    -1px -1px 0 #87A9C2,
+     1px -1px 0 #87A9C2,
+    -1px  1px 0 #87A9C2,
+     1px  1px 0 #87A9C2;
+}
+
+/* Handwritten Script utility classes */
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten);
+  font-weight: 600;
+}
+
+/* Subtle Grid Background Pattern (Stationery Grid Paper) */
+.bg-grid-paper {
+  background-color: var(--color-pastel-sky);
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.55) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.55) 1.5px, transparent 1.5px);
+  background-size: 34px 34px;
+}
+
+.bg-grid-paper-fine {
+  background-image: 
+    linear-gradient(to right, rgba(182, 221, 235, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(182, 221, 235, 0.35) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Polka Dots Pattern */
+.bg-polka-dots {
+  background-color: var(--color-dusty-blue);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.6) 2px, transparent 2px);
+  background-size: 18px 18px;
+}
+
+/* Pinstripe Pattern */
+.bg-pinstripes {
+  background-color: var(--color-butter-yellow);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(226, 216, 172, 0.35) 10px,
+    rgba(226, 216, 172, 0.35) 11px
+  );
+}
+
+/* Scattered Hearts Pattern */
+.bg-hearts-pattern {
+  background-color: #7b9bb4;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10c-2-3-6-3-8 0s0 6 8 11c8-5 10-8 8-11s-6-3-8 0z' fill='rgba(255,255,255,0.4)'/%3E%3C/svg%3E");
+  background-size: 42px 42px;
+}
+
+/* Polaroid Photo Frame */
+.polaroid-frame {
+  background-color: #FFFFFF;
+  padding: 10px 10px 24px 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px -4px rgba(82, 106, 124, 0.18), 0 3px 8px -2px rgba(82, 106, 124, 0.08);
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 32px -4px rgba(82, 106, 124, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-powder-blue);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-soft-gray-blue);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dusty-blue);
+}
+
+/* Toast container positioning */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
